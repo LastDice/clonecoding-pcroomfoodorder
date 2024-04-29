@@ -3,7 +3,18 @@ import Image from "next/image";
 
 export default function Home() {
     return (<main className="flex">
-            <div className="flex flex-col bg-gray-800 items-center pt-7 px-2 space-y-8 w-[80%] h-screen">
+            <div className="flex flex-col bg-gray-800 pt-2 px-2 items-center space-y-8 w-[80%] h-screen">
+                <div className="flex items-center justify-between w-full">
+                    <div></div>
+                    {/* 원 4개 */}
+                    <div className="flex items-center space-x-2">
+                        {
+                            [...Array(4)].map((_, index) => (
+                                <div className={"w-3 h-3 rounded-full " + (index == 0 ? "bg-white" : "bg-gray-400")} key={index}/>
+                            ))
+                        }
+                    </div>
+                </div>
                 <h1 className="text-yellow-400 text-3xl font-bold">여긴 대충 공지들어오는곳</h1>
                 <div
                     className="flex flex-row h-12 space-x-3 px-2 bg-white rounded-3xl items-center w-full justify-between">
@@ -12,59 +23,21 @@ export default function Home() {
                     {/* 글씨 줄내림 금지. */}
                     <div
                         className="flex flex-row space-x-8 font-bold text-gray-800 overflow-x-auto whitespace-nowrap w-full">
-                        <span className="text-gray-800">음식?</span>
-                        <span className="text-gray-800">음식?</span>
-                        <span className="text-gray-800">음식?</span>
-                        <span className="text-gray-800">음식?</span>
-                        <span className="text-gray-800">음식?</span>
+                        {
+                            ["음식", "카페"].map((value, index) => (
+                                <span className="text-gray-800" key={index}>{value}</span>
+                            ))
+                        }
                     </div>
                     <span
                         className="flex items-center justify-center w-10 h-10 m-2 bg-gray-800 rounded-full text-2xl text-gray-200 hover:cursor-pointer">&gt;</span>
                 </div>
                 <div className="grid grid-cols-5 gap-4 w-full overflow-y-auto p-2">
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
-                    <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500}/>
+                    {
+                        [...Array(20)].map((_, index) => (
+                            <FoodCard foodImage="/foodImg.webp" foodName="콜팝" foodPrice={3500} key={index}/>
+                        ))
+                    }
                 </div>
             </div>
             <div className="flex flex-col w-[30%] bg-gray-400 h-fit">
@@ -130,7 +103,7 @@ export default function Home() {
                                     <label htmlFor="fit-price" className="text-white pl-2">금액에 맞게</label>
                                 </div>
                                 <div>
-                                    <input type="radio" value="enter" id="enter-price" name="enter-price"/>
+                                    <input type="radio" value="enter" id="enter-price" name="select-price"/>
                                     <label htmlFor="enter-price" className="text-white px-2">직접입력</label>
                                     <input type="number" className="w-32 h-6 text-black rounded-md"/>
                                 </div>
